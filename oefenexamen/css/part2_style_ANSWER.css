@@ -1,0 +1,77 @@
+:root {
+    text-align: center;
+}
+
+body {
+    display: block;
+    margin: auto;
+    width: 650px;
+}
+
+.hiddenTitle {
+    position: absolute; /* Remove from flow, to allow it to be hidden yet remain in the outline */
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+#images {
+    display: grid;
+    grid-template-areas:
+            "simage1 simage2 simage3"
+            "bimage bimage bimage";
+    width: 80%;
+    gap: 20px;
+    margin: auto;
+}
+
+#images img {
+    width: 100%;
+}
+
+#images img:first-of-type {
+    grid-area: bimage;
+}
+
+#images img:nth-of-type(2) {
+    grid-area: simage1;
+}
+
+#images img:nth-of-type(3) {
+    grid-area: simage2;
+}
+
+#images img:nth-of-type(4) {
+    grid-area: simage3;
+}
+
+#citations {
+    font-size: 0.8em;
+}
+
+#citations > div{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: stretch;
+}
+
+.citation > p::before{
+    content:'\201C';
+    font-size: 1.8em;
+}
+
+.citation {
+    width: 175px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: justify;
+}
+
+.citation > span {
+    display: block;
+    text-align: right;
+    font-style: italic;
+}
